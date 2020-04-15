@@ -12,8 +12,8 @@ module.exports = {
     async create(request, response) {
         const { name, email, whatsapp, city, uf } = request.body;
 
-        const id = email;
-        // const id = generateUniqueId();
+        // const id = email;
+        const id = generateUniqueId();
 
         await connection('usuarios').insert({
             id,
