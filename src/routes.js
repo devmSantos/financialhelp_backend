@@ -1,11 +1,12 @@
 const express = require('express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 const { celebrate, Segments, Joi } = require('celebrate');
 
 const UsuarioController = require('./controllers/UsuarioController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
-
 
 
 const routes = express.Router();
@@ -50,6 +51,7 @@ routes.delete('/incidents/:id', celebrate({
         id: Joi.number().required(),
     })
 }), IncidentController.delete);
+
 
 
 module.exports = routes;
